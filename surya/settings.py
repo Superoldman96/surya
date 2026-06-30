@@ -81,6 +81,10 @@ class Settings(BaseSettings):
     SURYA_MAX_TOKENS_BLOCK_CEILING: int = 8192
     SURYA_MAX_TOKENS_FULL_PAGE: int = 12288
 
+    # Full-page OCR: progressive-temperature regeneration before block-mode fallback.
+    # Off by default (single greedy pass -> block fallback); opt-in for benchmarking.
+    SURYA_FULLPAGE_REGEN: bool = False
+
     BBOX_SCALE: int = 1000
 
     # vllm
